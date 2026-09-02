@@ -1,56 +1,38 @@
-# Carla's Cleaning — landing site
+# Carla's Cleaning — landing page
 
-Static one-page site for **Carla Gonzalez Perez** / Carla's Cleaning.
+Static one-page site for Carla Gonzalez Perez’s home cleaning business.
 
-## Files
+## Contact (do not invent extras)
 
-- `index.html` — page content (English default, bilingual-ready)
-- `styles.css` — mobile-first styles
-- `README.md` — this file
-
-## Contact on page
-
-- Email only: **carlashoe@icloud.com** (mailto for quote/book)
-- No phone, address, licenses, reviews, prices, or cities
+- Phone: **786-578-7462**
+- Email: **carlashoe@icloud.com**
+- Instagram: **[@gpcl77](https://www.instagram.com/gpcl77)**
 - Service area: **TBD — ask when you book**
+- No invented prices, reviews, licenses, or addresses
 
 ## Local preview
 
-From this folder:
-
 ```bash
-# Option A — Python
+cd /workspace/carla-cleaning-landing
 python3 -m http.server 8080
-
-# Option B — npx serve
-npx --yes serve -l 8080
 ```
 
-Then open http://localhost:8080
+Open http://127.0.0.1:8080
 
-## Deploy to Render (static site)
+## Deploy
 
-1. Push this folder to a **public** GitHub repo (or a private repo connected to Render).
-2. In [Render Dashboard → New Static Site](https://dashboard.render.com/static/new):
-   - **Build Command:** `true` (no build step)
-   - **Publish Directory:** `.` (or leave as `./`)
-3. Or with Render MCP / API after the repo exists:
-   - `create_static_site` with `buildCommand: "true"`, `publishPath: "./"`, and the Git repo URL.
-4. Confirm the live `*.onrender.com` URL after the first deploy succeeds.
+Prefer **Render Static Site** or **Cloudflare Pages**:
 
-## Deploy to Cloudflare Pages
+- Publish directory: site root (this folder)
+- Build command: none (or `echo ready`)
+- `index.html` + `styles.css` at publish root
 
-1. Install and log in: `npx wrangler login`
-2. From this folder:
+## Repository & live preview
 
-```bash
-npx wrangler pages project create carlas-cleaning
-npx wrangler pages deploy . --project-name=carlas-cleaning
-```
+- GitHub: https://github.com/bshoemak2/carlas-cleaning-landing
+- GitHub Pages (fallback while Render/Cloudflare auth blocked): https://bshoemak2.github.io/carlas-cleaning-landing/
 
-3. Use the URL Wrangler prints (e.g. `*.pages.dev`).
+### Deploy blockers noted
 
-## SEO / Search Console
-
-- Meta title and description are set in `index.html` `<head>`.
-- After deploy, add the property in Google Search Console and verify ownership.
+- **Render MCP** (`user-Render`): `list_workspaces` returns `unauthorized`; cannot select workspace or call `create_static_site` successfully. Re-authenticate the Render MCP integration in Cursor, then create a static site with build `true` and publish path `./` from this repo.
+- **Cloudflare Wrangler**: not logged in (`wrangler whoami`). Node on this box is v20; latest Wrangler wants Node ≥22 — use `npx wrangler@3` after `wrangler login`, or upgrade Node.
