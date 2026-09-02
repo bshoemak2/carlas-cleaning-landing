@@ -106,11 +106,21 @@ a:focus-visible,
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-weight: 700;
   font-size: 1.125rem;
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.01em;
+}
+
+.logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .logo:hover {
@@ -150,7 +160,7 @@ a:focus-visible,
   inset: 0;
   z-index: -2;
   background:
-    url("assets/hero-bg.jpg") center right / cover no-repeat;
+    url("assets/hero-bg.webp") center right / cover no-repeat;
 }
 
 .hero-overlay {
@@ -267,6 +277,26 @@ a:focus-visible,
   background: var(--bg-alt);
 }
 
+.section-wash {
+  background:
+    url("assets/section-wash.webp") center bottom / cover no-repeat,
+    var(--bg);
+}
+
+.heading-with-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.heading-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .section h2 {
   margin: 0;
   font-size: clamp(1.5rem, 3.5vw, 1.9rem);
@@ -374,10 +404,31 @@ a:focus-visible,
   gap: 1.5rem;
 }
 
+.about-photo {
+  margin: 0;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 @media (min-width: 720px) {
   .about-grid {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
     align-items: start;
+  }
+
+  .about-aside {
+    grid-column: 1;
+  }
+
+  .about-photo {
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 }
 
@@ -422,19 +473,30 @@ a:focus-visible,
   color: var(--ink-soft);
 }
 
-.contact-email {
-  margin: 1.25rem 0;
+.contact-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 1rem 0;
   font-size: clamp(1.15rem, 3vw, 1.4rem);
   font-weight: 600;
 }
 
-.contact-email a {
+.contact-line img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contact-line a {
   color: var(--ink);
   text-decoration: none;
   border-bottom: 2px solid var(--accent);
 }
 
-.contact-email a:hover {
+.contact-line a:hover {
   color: var(--accent);
 }
 

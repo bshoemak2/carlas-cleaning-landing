@@ -14,6 +14,9 @@ Despliega desde `main` (raíz del repo). El PR de esta rama no publica hasta que
 - Instagram: [@gpcl77](https://www.instagram.com/gpcl77)
 - Facebook: https://www.facebook.com/share/1DXMRZvRr8/
 
+## Assets
+WebP in `assets/` (plus `favicon.png` for browsers that need a PNG icon). Hero is preloaded; everything below the fold is `loading="lazy"`.
+
 ## Vista local
 ```bash
 python3 -m http.server 8080
