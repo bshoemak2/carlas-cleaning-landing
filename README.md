@@ -1,16 +1,23 @@
-# Clean & Cuidado — private landing draft
+# Clean & Cuidado
 
-**HOLD:** No public publish until CEO/Master says go.
+Landing pública de Carla Gonzalez Perez. Español primero, inglés como apoyo.
 
-## Locked
-- Name: Clean & Cuidado
-- Area: Miami Lakes, Miramar, and parts of Hialeah
-- Phone: 786-578-7462
-- Email: carlashoe@icloud.com
-- Instagram: @gpcl77
+**GitHub Pages:** https://bshoemak2.github.io/carlas-cleaning-landing/
+
+Despliega desde `main` (raíz del repo). El PR de esta rama no publica hasta que se fusione.
+
+## Datos fijos
+- Nombre: Clean & Cuidado
+- Zona: Miami Lakes, Miramar y partes de Hialeah
+- Teléfono: 786-578-7462
+- Correo: carlashoe@icloud.com
+- Instagram: [@gpcl77](https://www.instagram.com/gpcl77)
 - Facebook: https://www.facebook.com/share/1DXMRZvRr8/
 
-## Local preview
+## Assets
+WebP in `assets/` (plus `favicon.png` for browsers that need a PNG icon). Hero is preloaded; everything below the fold is `loading="lazy"`.
+
+## Vista local
 ```bash
-cd /workspace/carla-cleaning-landing && python3 -m http.server 8080
+python3 -m http.server 8080
 ```
