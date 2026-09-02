@@ -1,12 +1,16 @@
-# Carla's Cleaning — private landing draft
+# Clean & Cuidado — private landing draft
 
-**HOLD (Master/CEO):** No public URL until business name + service area are locked.
+**HOLD:** No public publish until CEO/Master says go.
 
-## Contact
+## Locked
+- Name: Clean & Cuidado
+- Area: Miami Lakes, Miramar, and parts of Hialeah
 - Phone: 786-578-7462
 - Email: carlashoe@icloud.com
 - Instagram: @gpcl77
 - Facebook: https://www.facebook.com/share/1DXMRZvRr8/
-- Service area: TBD
 
-Local: `python3 -m http.server 8080`
+## Local preview
+```bash
+cd /workspace/carla-cleaning-landing && python3 -m http.server 8080
+```
