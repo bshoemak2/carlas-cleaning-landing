@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bshoemak2.github.io/carlas-cleaning-landing/sitemap.xml
