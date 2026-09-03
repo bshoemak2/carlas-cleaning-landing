@@ -8,7 +8,8 @@
   --ink-soft: #4d5c5c;
   --line: #d5cfc2;
   --accent: #2f7a78;
-  --accent-hover: #246361;
+  --accent-ink: #246361;
+  --accent-hover: #1f5c5a;
   --accent-soft: #dceeee;
   --cream: #f4eee4;
   --shadow: 0 1px 2px rgba(36, 53, 54, 0.06), 0 8px 24px rgba(36, 53, 54, 0.06);
@@ -26,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -36,6 +38,7 @@ body {
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 img {
@@ -44,7 +47,7 @@ img {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-ink);
   text-underline-offset: 0.15em;
 }
 
@@ -53,8 +56,9 @@ a:hover {
 }
 
 a:focus-visible,
-.btn:focus-visible {
-  outline: 3px solid var(--accent);
+.btn:focus-visible,
+.logo:focus-visible {
+  outline: 3px solid var(--accent-ink);
   outline-offset: 3px;
 }
 
@@ -94,6 +98,7 @@ a:focus-visible,
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  padding-top: env(safe-area-inset-top);
 }
 
 .header-inner {
@@ -124,7 +129,7 @@ a:focus-visible,
 }
 
 .logo:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .nav-list {
@@ -143,7 +148,7 @@ a:focus-visible,
 }
 
 .nav-list a:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* Hero */
@@ -159,8 +164,11 @@ a:focus-visible,
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    url("assets/hero-bg.webp") center right / cover no-repeat;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center right;
 }
 
 .hero-overlay {
@@ -170,10 +178,11 @@ a:focus-visible,
   background:
     linear-gradient(
       105deg,
-      rgba(246, 243, 236, 0.94) 0%,
-      rgba(246, 243, 236, 0.86) 38%,
-      rgba(47, 122, 120, 0.38) 72%,
-      rgba(36, 53, 54, 0.42) 100%
+      rgba(246, 243, 236, 0.97) 0%,
+      rgba(246, 243, 236, 0.92) 40%,
+      rgba(246, 243, 236, 0.62) 58%,
+      rgba(47, 122, 120, 0.34) 78%,
+      rgba(36, 53, 54, 0.40) 100%
     );
 }
 
@@ -188,7 +197,7 @@ a:focus-visible,
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .hero .en {
@@ -259,8 +268,8 @@ a:focus-visible,
 }
 
 .btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-ink);
+  color: var(--accent-ink);
 }
 
 .btn-large {
@@ -278,9 +287,20 @@ a:focus-visible,
 }
 
 .section-wash {
-  background:
-    url("assets/section-wash.webp") center bottom / cover no-repeat,
-    var(--bg);
+  position: relative;
+  isolation: isolate;
+  background: var(--bg);
+}
+
+.section-wash-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center bottom;
 }
 
 .heading-with-icon {
@@ -383,7 +403,7 @@ a:focus-visible,
   height: 2.25rem;
   border-radius: 50%;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 700;
   font-size: 0.95rem;
 }
@@ -497,7 +517,7 @@ a:focus-visible,
 }
 
 .contact-line a:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .fine-print {
@@ -539,6 +559,42 @@ a:focus-visible,
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(246, 243, 236, 0.97) 0%,
+        rgba(246, 243, 236, 0.94) 58%,
+        rgba(246, 243, 236, 0.86) 100%
+      );
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    align-items: flex-start;
+    gap: 0.45rem 1rem;
+    padding: 0.7rem 0;
+  }
+
+  .nav-list {
+    gap: 0.25rem 0.85rem;
+  }
+
+  .nav-list a {
+    font-size: 0.9rem;
+  }
+
+  .cta-row {
+    gap: 0.65rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.1rem;
   }
 }
 
