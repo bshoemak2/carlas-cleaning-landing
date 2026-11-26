@@ -19,7 +19,7 @@ Despliega desde `main` (raíz del repo). El PR de esta rama no publica hasta que
 WebP in `assets/` (plus `favicon.png` and `apple-touch-icon.png`). Hero is preloaded; everything below the fold is `loading="lazy"`.
 
 **Open Graph / Twitter image (absolute):**
-https://bshoemak2.github.io/carlas-cleaning-landing/assets/hero-bg.webp
+https://bshoemak2.github.io/carlas-cleaning-landing/assets/og-image.jpg
 
 ## Vista local
 ```bash

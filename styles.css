@@ -28,6 +28,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -571,6 +572,15 @@ a:focus-visible,
         rgba(246, 243, 236, 0.94) 58%,
         rgba(246, 243, 236, 0.86) 100%
       );
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.25rem 0.15rem;
   }
 }
 
